@@ -1,5 +1,6 @@
 
-
+// This file handles all the testing
+// I use chai and mocha for testing 
 var chai = require('chai');
 var chaiHttp  = require('chai-http');
 var server = require('../app.js')
@@ -13,7 +14,7 @@ chai.should();
 
 describe("Videos", () => {
     describe("GET /", () => {
-        // Test to get all students record
+        // Test without a url parameter
         it("should return no url parameter", (done) => {
              chai.request(server)
                  .get('/')
@@ -24,7 +25,7 @@ describe("Videos", () => {
                      done();
                   });
          });
-        // Test to get single student record
+        // Test with a url paramater but not a valid url
         it("should return invalid url", (done) => {
              const id = 1;
              chai.request(server)
@@ -37,7 +38,7 @@ describe("Videos", () => {
          });
 
          it("should return invalid url", (done) => {
-            const id = 1;
+            // test with a url parameter but not a vaild hls url
             chai.request(server)
                 .get(`/?url=https%3A%2F%2Fgoogle.com`)
                 .end((err, res) => {
@@ -47,7 +48,7 @@ describe("Videos", () => {
                  });
         });
         it("should return 200 ok", (done) => {
-            const id = 1;
+            // test with a valid url and a valid hls
             chai.request(server)
                 .get(`/?url=https%3A%2F%2Fvideodelivery.net%2F6aa80e92c92260afabeebba6ea58e661%2Fmanifest%2Fvideo.m3u8`)
                 .end((err, res) => {

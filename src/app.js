@@ -8,7 +8,6 @@ var path = require('path');
 var morgan = require('morgan');
 var bodyParser = require('body-parser')
 var cors = require('cors');
-const fileUpload = require('express-fileupload');
 
 
 require("dotenv").config();
@@ -27,21 +26,15 @@ app.use(
 
 var HLSRouter = require('./HLS/hls.router');
 
-// var server = require('./server');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// view engine setup
-// app.set('views', path.join(__dirname, 'views'));
-// app.set('view engine', 'jade');
-
-// app.use(morgan('dev' , {stream: winston.stream} ));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(fileUpload());
+
 
 app.use('/', HLSRouter);
 
