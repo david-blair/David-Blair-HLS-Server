@@ -1,0 +1,38 @@
+{
+  "name": "playposit",
+  "version": "1.0.0",
+  "description": "\"# David-Blair-HLS-Server\"",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node ./src/index.js",
+    "test": "mocha --require babel-register ./src/tests/*.js --exit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/david-blair/David-Blair-HLS-Server.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/david-blair/David-Blair-HLS-Server/issues"
+  },
+  "homepage": "https://github.com/david-blair/David-Blair-HLS-Server#readme",
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "chai": "^4.1.2",
+    "chai-http": "^4.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.2.0",
+    "fluent-ffmpeg": "^2.1.2",
+    "m3u8-to-mp4": "^1.0.0",
+    "m3u8stream": "^0.8.1",
+    "mocha": "^8.2.1",
+    "morgan": "^1.10.0",
+    "request": "^2.88.2",
+    "requests": "^0.3.0",
+    "url-exist": "^2.0.2"
+  }
+}
